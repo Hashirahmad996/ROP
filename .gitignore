@@ -1,0 +1,22 @@
+# Secrets
+.kaggle/
+kaggle.json
+
+# Data (too large for git)
+dataset/
+kaggle_dataset/
+plus pre/
+stage 3 neovascularization with ridge/
+treated ROP/
+normal vascularized retina/
+*.zip
+
+# Model weights
+*.pth
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.ipynb_checkpoints/
