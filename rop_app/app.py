@@ -14,8 +14,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))  # find model_utils how
 from model_utils import decode_image, load_config, load_model, predict, preprocess
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_WEIGHTS = ROOT / "rop_detection_model.pth"
-DEFAULT_CONFIG = ROOT / "rop_model_config.json"
+DEFAULT_WEIGHTS = ROOT / "models" / "rop_detection_model.pth"
+DEFAULT_CONFIG = ROOT / "models" / "rop_model_config.json"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 st.set_page_config(page_title="ROP Screening", layout="wide")
@@ -53,8 +53,8 @@ with st.sidebar:
 
 if not weights_path.exists():
     st.error(f"Model file not found: `{weights_path}`\n\n"
-             "Download `rop_detection_model.pth` from your Kaggle notebook's **Output** panel and put it in "
-             "the project folder (or enter its location in the sidebar).")
+             "Download `rop_detection_model.pth` and `rop_model_config.json` from your Kaggle notebook's "
+             "**Output** panel and put them in the `models` folder (or enter the location in the sidebar).")
     st.stop()
 
 try:
